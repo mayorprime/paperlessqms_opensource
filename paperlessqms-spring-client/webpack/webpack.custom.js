@@ -42,7 +42,7 @@ module.exports = async (config, options, targetOptions) => {
     config.devServer.proxy = proxyConfig({ tls });
   }
 
-  if (targetOptions.target === 'serve' || config.watch) {
+  if (process.env.SKIP_BROWSERSYNC !== '1' && (targetOptions.target === 'serve' || config.watch)) {
     config.plugins.push(
       new BrowserSyncPlugin(
         {

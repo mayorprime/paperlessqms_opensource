@@ -17,4 +17,5 @@ services:
     # If you want to expose these ports outside your dev PC,
     # remove the "127.0.0.1:" prefix
     ports:
-      - 127.0.0.1:5432:5432
+      # Use 15432 on the host when another Postgres already binds 5432 (common on dev machines).
+      - 127.0.0.1:15432:5432

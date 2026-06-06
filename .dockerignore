@@ -1,0 +1,26 @@
+.git
+.env
+.env.*
+!.env.example
+
+# Node dependencies (reinstalled in Docker)
+**/node_modules
+
+# Maven build output (rebuilt in Docker)
+paperlessqms-spring/target/
+paperlessqms-spring-client/target/
+
+# Flutter build artifacts (rebuilt in Docker)
+paperlessqms-flutter/**/build/
+paperlessqms-flutter/**/.dart_tool/
+paperlessqms-flutter/**/.flutter-plugins
+paperlessqms-flutter/**/.flutter-plugins-dependencies
+
+# IDE and OS files
+**/.idea
+**/*.iml
+**/.DS_Store
+
+# Keep Maven wrapper so it can be used inside Docker
+!paperlessqms-spring/mvnw
+!paperlessqms-spring/.mvn/
